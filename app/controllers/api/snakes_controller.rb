@@ -9,8 +9,10 @@ class Api::SnakesController < ApplicationController
   def index
      @snakes = Snake.all
 
+     respond_to do |format|
+     format.json { render json: @snakes}
 
-    render json: JSON.pretty_generate(@snakes.as_json), each_serializer: SnakeSerializer
+   end
   end
 
   # GET /snakes/1
