@@ -1,6 +1,7 @@
 class Api::SnakesController < ApplicationController
 
   respond_to :json
+protect_from_forgery unless: -> { request.format.json? }
   before_action :set_snake, only: [:show, :edit, :update, :destroy]
 
   # GET /snakes
