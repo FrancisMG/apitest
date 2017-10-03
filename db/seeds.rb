@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Snake.create!([{
+
+	first_name: 'Edd'
+	},
+
+	{
+	first_name: 'Kim'
+	},
+
+	{
+	first_name: 'Rommel'
+	},
+
+	{
+	first_name: 'Cyrus'
+	}, 
+
+	{
+	first_name: 'Jigs'
+	}
+								])
+
