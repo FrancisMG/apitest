@@ -1,17 +1,16 @@
 class Api::SnakesController < ApplicationController
 
   respond_to :json
-protect_from_forgery unless: -> { request.format.json? }
+
   before_action :set_snake, only: [:show, :edit, :update, :destroy]
 
   # GET /snakes
   # GET /snakes.json
   def index
-    @snakes = Snake.all
-respond_to do |format|
-format.json { render: @snakes }
-end
-s
+     @snakes = Snake.all
+
+
+    render json: JSON.pretty_generate(@snakes.as_json), each_serializer: SnakeSerializer
   end
 
   # GET /snakes/1
