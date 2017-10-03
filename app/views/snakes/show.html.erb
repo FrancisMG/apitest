@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @snake.first_name %>
+</p>
+
+<%= link_to 'Edit', edit_snake_path(@snake) %> |
+<%= link_to 'Back', snakes_path %>

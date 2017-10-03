@@ -1,0 +1,22 @@
+<%= form_with(model: snake, local: true) do |form| %>
+  <% if snake.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(snake.errors.count, "error") %> prohibited this snake from being saved:</h2>
+
+      <ul>
+      <% snake.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :snake_first_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
