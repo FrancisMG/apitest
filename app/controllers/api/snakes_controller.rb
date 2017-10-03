@@ -7,7 +7,11 @@ protect_from_forgery unless: -> { request.format.json? }
   # GET /snakes
   # GET /snakes.json
   def index
-     respond_with Snake.all
+    @snakes = Snake.all
+respond_to do |format|
+format.json { render: @snakes }
+end
+s
   end
 
   # GET /snakes/1
