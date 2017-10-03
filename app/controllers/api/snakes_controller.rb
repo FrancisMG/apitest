@@ -6,7 +6,7 @@ class Api::SnakesController < ApplicationController
   # GET /snakes
   # GET /snakes.json
   def index
-    @snakes = Snake.all
+     respond_with Snake.all
   end
 
   # GET /snakes/1
